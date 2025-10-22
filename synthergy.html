@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Synthergy.ai — Business Advantage through People + AI</title>
+  <meta name="description" content="Synthergy.ai helps organizations unlock competitive advantage by combining human insight with AI capability — through training, consulting, and curated tools." />
+  <meta property="og:title" content="Synthergy.ai — Business Advantage through People + AI" />
+  <meta property="og:description" content="Training, consulting, and curated tools that empower people with AI." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://synthergy.ai" />
+  <meta name="theme-color" content="#0f172a" />
+  <style>
+    :root {
+      --bg: #0b1020;          /* deep slate/navy */
+      --surface: #111936;     /* card surface */
+      --muted: #7b86a5;       /* muted text */
+      --text: #e8ecf8;        /* main text */
+      --accent: #42e7b2;      /* teal/green accent */
+      --accent-2: #ffd166;    /* warm accent */
+      --border: #22305b;      /* soft border */
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 1100px;
+    }
+    * { box-sizing: border-box }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(66,231,178,.15), transparent 60%),
+                  radial-gradient(900px 500px at -10% 10%, rgba(255,209,102,.08), transparent 60%),
+                  var(--bg);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Layout */
+    .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+    header { position: sticky; top: 0; z-index: 20; backdrop-filter: saturate(1.2) blur(6px); background: rgba(11,16,32,.65); border-bottom: 1px solid rgba(255,255,255,.06); }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .2px; }
+    .brand .logo { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: var(--shadow); display: grid; place-items: center; color: #0a0f1f; font-weight: 900; }
+    .brand small { color: var(--muted); font-weight: 500; display:block; margin-top:-2px; }
+    nav ul { list-style: none; display: flex; gap: 18px; margin: 0; padding: 0; }
+    nav a { color: var(--text); opacity: .9; }
+
+    /* Hero */
+    .hero { padding: 80px 0 50px; }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 32px; align-items: center; }
+    .eyebrow { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: .18em; font-size: .8rem; }
+    h1 { font-size: clamp(30px, 4.2vw, 54px); line-height: 1.1; margin: 10px 0 14px; }
+    .sub { font-size: clamp(16px, 1.2vw, 20px); color: var(--muted); max-width: 65ch; }
+    .cta { display: flex; gap: 14px; margin-top: 24px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 999px; border: 1px solid var(--border); background: #121a38; color: var(--text); font-weight: 600; }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), #46c2f9); color: #062015; border: none; }
+    .btn:hover { transform: translateY(-1px); box-shadow: var(--shadow); text-decoration: none; }
+
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .panel { padding: 20px; }
+
+    /* Sections */
+    section { padding: 60px 0; }
+    h2 { font-size: clamp(24px, 3vw, 34px); margin: 0 0 10px; }
+    .kicker { color: var(--muted); margin-bottom: 20px; }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+
+    .list { margin: 12px 0 0; padding: 0 0 0 18px; }
+
+    /* Badge strip */
+    .strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; opacity: .9; }
+    .badge { padding: 10px 12px; text-align: center; border: 1px dashed var(--border); border-radius: 12px; color: var(--muted); font-size: .95rem; background: rgba(255,255,255,.02); }
+
+    /* Newsletter & contact */
+    form { display: grid; grid-template-columns: 1fr auto; gap: 10px; }
+    input, textarea { width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--border); background: #0f1630; color: var(--text); }
+    textarea { min-height: 120px; resize: vertical; }
+
+    /* Footer */
+    footer { border-top: 1px solid rgba(255,255,255,.08); padding: 28px 0 60px; color: var(--muted); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-grid, .grid-3, .grid-2, form { grid-template-columns: 1fr; }
+      .strip { grid-template-columns: 1fr 1fr; }
+      header { position: static; }
+    }
+  </style>
+  <script>
+    // Simple smooth scroll for in-page links
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+          const id = a.getAttribute('href');
+          if (id.length > 1) { e.preventDefault(); document.querySelector(id)?.scrollIntoView({behavior:'smooth'}); }
+        });
+      });
+    });
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Synthergy.ai",
+    "url": "https://synthergy.ai",
+    "logo": "https://synthergy.ai/logo.png",
+    "sameAs": ["https://lginternetmarketing.com"],
+    "description": "Training, consulting, and curated tools that empower people with AI."
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">S</div>
+        <div>
+          Synthergy.ai
+          <small>People × AI, Smarter Together</small>
+        </div>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#framework">Framework</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Business advantage through people + AI</div>
+          <h1>It’s not human <em>or</em> artificial intelligence — it’s people <strong>with</strong> AI.</h1>
+          <p class="sub">Synthergy.ai helps leaders unlock competitive advantage by combining human insight with AI capability — through <strong>training</strong>, <strong>consulting</strong>, and <strong>curated tools</strong>.</p>
+          <div class="cta">
+            <a class="btn primary" href="#contact" aria-label="Book a strategy call">Book a Strategy Call</a>
+            <a class="btn" href="#services" aria-label="Explore services">Explore Services</a>
+          </div>
+          <div class="strip" style="margin-top:24px">
+            <div class="badge">Training & Workshops</div>
+            <div class="badge">Automation & Workflows</div>
+            <div class="badge">AI Tool Selection</div>
+            <div class="badge">Ethical, Human‑Centered</div>
+          </div>
+        </div>
+        <aside class="card panel" aria-label="Value points">
+          <h2 style="margin-top:0">Why Synthergy?</h2>
+          <ul class="list">
+            <li><strong>Outcomes first:</strong> measurable gains in speed, quality, and cost.</li>
+            <li><strong>People‑centric:</strong> augment teams instead of replacing them.</li>
+            <li><strong>Pragmatic:</strong> tools and workflows that fit your stack.</li>
+            <li><strong>Secure & compliant:</strong> governance and data‑safety aware.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <div class="container">
+        <h2>What We Do</h2>
+        <p class="kicker">Three ways we help you capture value from AI — responsibly, rapidly, and repeatedly.</p>
+        <div class="grid-3">
+          <div class="card panel" aria-label="Training">
+            <h3>Training & Enablement</h3>
+            <p>Hands‑on workshops and courses that upskill your team in human‑centered AI: prompts, analytics, content, and workflow design.</p>
+            <ul class="list">
+              <li>Executive briefings & clinics</li>
+              <li>Team workshops (onsite/virtual)</li>
+              <li>Self‑paced courses & playbooks</li>
+            </ul>
+          </div>
+          <div class="card panel" aria-label="Consulting">
+            <h3>Consulting & Implementation</h3>
+            <p>From discovery to deployment: we design, test, and roll out AI‑enabled processes that keep humans in control.</p>
+            <ul class="list">
+              <li>Process audits & opportunity maps</li>
+              <li>Automation with Zapier/Make/APIs</li>
+              <li>Chatbots & knowledge systems</li>
+            </ul>
+          </div>
+          <div class="card panel" aria-label="Tools">
+            <h3>Tools & Recommendations</h3>
+            <p>Independent guidance on AI tools that <em>augment</em> people. Reviews, comparisons, and a living “AI Stack” for your use cases.</p>
+            <ul class="list">
+              <li>Vendor‑neutral tool selection</li>
+              <li>Best‑practice templates</li>
+              <li>Affiliate‑supported resources*</li>
+            </ul>
+          </div>
+        </div>
+        <p style="color:var(--muted); font-size:.95rem; margin-top:10px">*We may earn a commission from recommended tools at no cost to you.</p>
+      </div>
+    </section>
+
+    <!-- Framework -->
+    <section id="framework">
+      <div class="container">
+        <h2>The Synthergy Framework</h2>
+        <p class="kicker">A practical, people‑first path to results.</p>
+        <div class="grid-3">
+          <div class="card panel">
+            <h3>1) Assess</h3>
+            <p>Define outcomes. Map workflows. Identify safe, high‑ROI opportunities where AI amplifies human strengths.</p>
+          </div>
+          <div class="card panel">
+            <h3>2) Augment</h3>
+            <p>Pair people with the right models and tools. Pilot small, iterate fast, measure impact on speed, quality, and cost.</p>
+          </div>
+          <div class="card panel">
+            <h3>3) Automate</h3>
+            <p>Scale what works. Add governance, monitoring, and training so improvements stick — responsibly and repeatably.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources / Blog teaser -->
+    <section id="resources">
+      <div class="container">
+        <h2>Resources</h2>
+        <p class="kicker">Start learning the human + AI way.</p>
+        <div class="grid-2">
+          <article class="card panel">
+            <h3>Free Guide: 10 AI Workflows that Save 5+ Hours/Week</h3>
+            <p>Real examples across marketing, operations, and customer support. Designed for quick wins without heavy IT lift.</p>
+            <div class="cta"><a class="btn primary" href="#newsletter">Get the Guide</a></div>
+          </article>
+          <article class="card panel">
+            <h3>Compare: Human + AI Tool Stack for Small Teams</h3>
+            <p>A curated stack of AI‑enhanced tools that respect your data and empower your people.</p>
+            <div class="cta"><a class="btn" href="#contact">Request the Stack</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lead capture -->
+    <section id="newsletter">
+      <div class="container">
+        <div class="card panel">
+          <h2>Get the Synthergy Weekly</h2>
+          <p class="kicker">Actionable tips, case studies, and tool picks — focused on people + AI performance.</p>
+          <form onsubmit="event.preventDefault(); alert('Thanks! We\'ll be in touch soon.'); this.reset();" aria-label="Newsletter signup">
+            <input type="email" name="email" placeholder="you@company.com" aria-label="Email address" required />
+            <button class="btn primary" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <h2>Book a Strategy Call</h2>
+        <p class="kicker">Tell us about your goals. We’ll identify where people + AI can deliver the fastest ROI.</p>
+        <div class="grid-2">
+          <div class="card panel">
+            <form onsubmit="event.preventDefault(); alert('Message sent! We\'ll reply within one business day.'); this.reset();" aria-label="Contact form">
+              <label for="name">Name</label>
+              <input id="name" name="name" placeholder="Your name" required />
+              <label for="company">Company</label>
+              <input id="company" name="company" placeholder="Company (optional)" />
+              <label for="email2">Email</label>
+              <input id="email2" type="email" name="email" placeholder="you@company.com" required />
+              <label for="message">What would you like to achieve?</label>
+              <textarea id="message" name="message" placeholder="Briefly describe your goals"></textarea>
+              <div class="cta"><button class="btn primary" type="submit">Send</button></div>
+            </form>
+          </div>
+          <div class="card panel">
+            <h3>Prefer to schedule directly?</h3>
+            <p>Add your booking link when ready.</p>
+            <div class="cta"><a class="btn" href="#" aria-disabled="true">Add Calendly Link</a></div>
+            <hr style="border-color:var(--border); margin:16px 0">
+            <p style="color:var(--muted)">Part of <a href="https://lginternetmarketing.com" target="_blank" rel="noopener">LG Internet Marketing</a></p>
+            <p style="color:var(--muted); font-size:.95rem">Disclosure: Some resource links may be affiliate links. We only recommend tools that empower people.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex; gap:10px; align-items:center; justify-content:space-between; flex-wrap:wrap">
+        <div>© <span id="y"></span> Synthergy.ai • People × AI, Smarter Together</div>
+        <div>
+          <a href="#services">Services</a> • <a href="#framework">Framework</a> • <a href="#resources">Resources</a> • <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
